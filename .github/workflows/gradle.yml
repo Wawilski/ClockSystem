@@ -20,7 +20,6 @@ jobs:
   
     strategy:
       matrix:
-        version: [10, 12, 14]
         os: [ubuntu-latest, windows-latest,macos-latest]
       
     env:
@@ -33,7 +32,8 @@ jobs:
         
     runs-on: ${{ matrix.os }}
     permissions:
-      contents: read  
+      contents: read
+      artifact-metadata: write
     
     steps:
     
@@ -46,10 +46,6 @@ jobs:
       with:
         java-version: '25'
         distribution: 'temurin'
-
-    - uses: actions/upload-artifact@v6
-      with:
-        path: app/build/reports/tests
 
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
@@ -69,6 +65,13 @@ jobs:
     
     - name: Build with Gradle 9.1.0
       run: gradle build
+
+    
+    - uses: actions/upload-artifact@v6
+      with:
+        name: my-artifact
+        path: app/build/reports/tests
+
     
 
       
