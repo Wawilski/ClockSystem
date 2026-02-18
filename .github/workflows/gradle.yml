@@ -46,4 +46,7 @@ jobs:
     
     - name: Build with Gradle 9.1.0
       run: gradle build
+    
+env:
+  DISPLAY: ":99.0"
       
