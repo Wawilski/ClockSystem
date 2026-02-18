@@ -23,6 +23,7 @@ jobs:
       - uses: pmd/pmd-github-action@v2
         id: pmd
         with:
+          sourcePath: 'app/src/main/java/org'
           rulesets: 'category/java/errorprone.xml'
       - name: Fail build if there are violations
         if: steps.pmd.outputs.violations != 0
