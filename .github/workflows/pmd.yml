@@ -9,6 +9,12 @@ on:
 
 jobs:
   pmd:
+
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -17,6 +23,6 @@ jobs:
           java-version: '25'
       - uses: pmd/pmd-github-action@v2
         with:
-        rulesets: 'category/java/errorprone.xml’
+          rulesets: 'category/java/errorprone.xml'
 
   
