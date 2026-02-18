@@ -1,4 +1,5 @@
-![Workflow status badge](https://github.com/Wawilski/ClockSystem-TP/actions/workflows/gradle.yml/badge.svg)
+![Gradle Workflow status badge](https://github.com/Wawilski/ClockSystem-TP/actions/workflows/gradle.yml/badge.svg)
+![Pmd Workflow status badge](https://github.com/Wawilski/ClockSystem-TP/actions/workflows/pmd.yml/badge.svg)
 
 # ClockSystem
 
