@@ -66,8 +66,8 @@ jobs:
     - name: Build with Gradle 9.1.0
       run: gradle build
 
-    
-    - uses: actions/upload-artifact@v6
+    - name: Test report    
+      uses: actions/upload-artifact@v6
       with:
         name: my-artifact
         path: app/build/reports/tests
