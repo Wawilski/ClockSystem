@@ -14,8 +14,14 @@ on:
     branches: [ "main" ]
 
 jobs:
+
+
   build:    
   
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest,macos-latest]
+      
     env:
       DISPLAY: ":99.0"
   
@@ -24,7 +30,7 @@ jobs:
         image: selenium/standalone-chrome:latest
         options: -e VNC_SERVER=true -e VNC_PORT=5900
         
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     permissions:
       contents: read
 
